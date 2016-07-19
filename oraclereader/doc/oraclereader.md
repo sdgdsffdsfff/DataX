@@ -28,6 +28,7 @@ OracleReader插件实现了从Oracle读取数据。在底层实现上，OracleRe
         "setting": {
             "speed": {
             //设置传输速度 byte/s 尽量逼近这个速度但是不高于它.
+            // channel 表示通道数量，byte表示通道速度，如果单通道速度1MB，配置byte为1048576表示一个channel
                  "byte": 1048576
             },
             //出错限制
@@ -85,7 +86,9 @@ OracleReader插件实现了从Oracle读取数据。在底层实现上，OracleRe
 {
     "job": {
         "setting": {
-            "speed": 1048576
+            "speed": {
+            	"channel": 5
+            }
         },
         "content": [
             {
@@ -246,7 +249,7 @@ OracleReader插件实现了从Oracle读取数据。在底层实现上，OracleRe
 
 | DataX 内部类型| Oracle 数据类型    |
 | -------- | -----  |
-| Long     |NUMBER,RAWID,INTEGER,INT,SMALLINT|
+| Long     |NUMBER,INTEGER,INT,SMALLINT|
 | Double   |NUMERIC,DECIMAL,FLOAT,DOUBLE PRECISION,REAL|
 | String   |LONG,CHAR,NCHAR,VARCHAR,VARCHAR2,NVARCHAR2,CLOB,NCLOB,CHARACTER,CHARACTER VARYING,CHAR VARYING,NATIONAL CHARACTER,NATIONAL CHAR,NATIONAL CHARACTER VARYING,NATIONAL CHAR VARYING,NCHAR VARYING    |
 | Date     |TIMESTAMP,DATE    |
