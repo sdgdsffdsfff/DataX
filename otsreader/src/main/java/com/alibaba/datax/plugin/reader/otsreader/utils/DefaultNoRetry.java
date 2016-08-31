@@ -1,17 +1,12 @@
 package com.alibaba.datax.plugin.reader.otsreader.utils;
 
-import com.aliyun.openservices.ots.internal.OTSRetryStrategy;
+import com.aliyun.openservices.ots.internal.OTSDefaultRetryStrategy;
 
-public class DefaultNoRetry implements OTSRetryStrategy {
+public class DefaultNoRetry extends OTSDefaultRetryStrategy {
 
     @Override
     public boolean shouldRetry(String action, Exception ex, int retries) {
         return false;
-    }
-
-    @Override
-    public long getPauseDelay(String s, Exception e, int i) {
-        return 0;
     }
 
 }

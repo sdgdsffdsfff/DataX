@@ -31,10 +31,10 @@
             <artifactId>logback-classic</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.aliyun.odps</groupId>
-            <artifactId>odps-sdk-core</artifactId>
-            <version>0.19.3-public</version>
-        </dependency>
+			<groupId>com.aliyun.odps</groupId>
+			<artifactId>odps-sdk-core</artifactId>
+			<version>0.19.3-public</version>
+		</dependency>
 
         <!-- httpclient begin -->
         <dependency>
